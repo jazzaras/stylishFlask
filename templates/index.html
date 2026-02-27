@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Flask Stylish{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to <span class="gradient-text">Flask Stylish</span></h1>
+        <p>A beautiful, modern Flask application template to kickstart your next project.</p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('about') }}" class="btn btn-primary">Learn More</a>
+            <a href="{{ url_for('contact') }}" class="btn btn-secondary">Get in Touch</a>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <h2>Features</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Fast & Lightweight</h3>
+            <p>Built with Flask, the micro web framework that's perfect for small to medium projects.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>Modern Design</h3>
+            <p>Clean, responsive UI with beautiful gradients and smooth animations.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Fully Responsive</h3>
+            <p>Looks great on all devices, from mobile phones to desktop monitors.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
