@@ -1,0 +1,30 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{!contains(github.event.head_commit.message, '--skip-deploy')}}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd stylishFlask
+            git pull origin main
+            docker build . -t amjad
+            docker run -d -p 80:80 amjad
+            
+            
+            
