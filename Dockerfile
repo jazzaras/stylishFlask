@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose port (optional, mostly for documentation)
-EXPOSE 8000
+EXPOSE 80
 
 # Command to run the app
-CMD ["gunicorn", "-w", "3", "-b", "0.0.0.0:8000", "app:app"]
+CMD ["gunicorn", "-w", "3", "-b", "0.0.0.0:80", "app:app"]
