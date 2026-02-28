@@ -246,6 +246,51 @@ body {
     margin-bottom: 0;
 }
 
+.about-card a.highlight-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.about-card a.highlight-link:hover {
+    color: var(--secondary);
+}
+
+.beliefs-list {
+    list-style: none;
+    padding: 0;
+}
+
+.beliefs-list li {
+    color: var(--gray);
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.beliefs-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+.beliefs-list li strong {
+    color: var(--white);
+}
+
+.connect-card {
+    text-align: center;
+}
+
+.connect-card .btn {
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
