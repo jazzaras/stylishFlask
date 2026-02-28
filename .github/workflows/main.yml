@@ -22,8 +22,10 @@ jobs:
           script: |
             cd stylishFlask
             git pull origin main
+            docker stop cont || true 
+            docker rm cont || true 
             docker build . -t amjad
-            docker run -d -p 80:80 amjad
+            docker run --name cont -d -p 80:80 amjad
             
             
             
