@@ -22,8 +22,8 @@ jobs:
           script: |
             cd stylishFlask
             git pull origin main
-            docker stop cont || true 
-            docker rm cont || true 
+            docker ps -q --filter "publish=80" | xargs -r docker stop
+            docker ps -aq --filter "publish=80" | xargs -r docker rm
             docker build . -t amjad
             docker run --name cont -d -p 80:80 amjad
             
